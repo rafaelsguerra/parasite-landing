@@ -11,6 +11,7 @@
 	margin-top: 85px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 10px;
 	max-width: 90%;
 	border-radius: 20px;
 	background-color: #90b2ec;
@@ -22,9 +23,21 @@
 	margin-top: 85px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 10px;
 	max-width: 90%;
 	border-radius: 20px;
 	background-color: #cceeff;
 	color: black;
 	font-family: Raleway, sans-serif;
+}
+
+#fixedButton {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+#phone{
+	width: auto;
+	max-height: 80%;
 }
