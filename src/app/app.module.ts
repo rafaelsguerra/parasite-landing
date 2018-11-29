@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatButtonModule, MatDividerModule, MatGridListModule, 
-         MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatDividerModule, MatGridListModule,
+         MatListModule, MatMenuModule } from '@angular/material';
 import { PanelComponent } from './panel/panel.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { PanelComponent } from './panel/panel.component';
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

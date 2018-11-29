@@ -19,8 +19,7 @@ export class PanelComponent implements OnInit {
     this.tileBreakpoint = (window.innerWidth <= 1024) ? 1 : 3;
   }
 
-  scrollToElement(id): void {
-    const element = document.getElementById(id);
+  scrollTo(element: any) {
     element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
 

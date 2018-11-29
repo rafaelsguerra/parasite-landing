@@ -2,16 +2,27 @@
   <mat-toolbar-row>
     <span>Parasite</span>
     <span style="flex: 1 1 auto"></span>
-    <button mat-button (click)="scrollToElement('start')">Inicio</button>
-    <button mat-button (click)="scrollToElement('about')">Sobre</button>
-    <button mat-button (click)="scrollToElement('features')">Caracteristicas</button>
+    <div fxShow="true" fxHide.xs="true">
+    <button mat-button (click)="scrollTo(start)">Inicio</button>
+    <button mat-button (click)="scrollTo(about)">Sobre</button>
+    <button mat-button (click)="scrollTo(features)">Caracteristicas</button>
+    </div>
+    <div fxShow="true" fxHide.gt-xs="true">
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-button (click)="scrollTo(start)">Inicio</button>
+        <button mat-button (click)="scrollTo(about)">Sobre</button>
+        <button mat-button (click)="scrollTo(features)">Caracteristicas</button>
+      </mat-menu>
+    </div>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div id="top">
+<div id="top" #top>
 </div>
 
-<div class="panel1" id="start">
+<div class="panel1" id="start" #start>
   <mat-grid-list [cols]="listBreakpoint" rowHeight=650px (window:resize)="onResize($event)" style="max-width: 90%; margin: auto">
     <mat-grid-tile colspan=1 style="border-style: solid; min-width: 265px">
       <img src="https://kathleenhalme.com/images/iphone-clipart-clear-background-phone-8.png" class="phone">
@@ -27,7 +38,7 @@
   </mat-grid-list>
 </div>
 
-<div class="panel2" id="about">
+<div class="panel2" id="about" #about>
   <mat-grid-list [cols]="listBreakpoint" rowHeight=650px style="max-width: 90%; margin: auto">
   	<mat-grid-tile [colspan]="tileBreakpoint" style="border-style: solid">
       <div style="display: block;">
@@ -43,7 +54,7 @@
   </mat-grid-list>
 </div>
 
-<div class="panel1" id="features" style="color: white">
+<div class="panel1" id="features" style="color: white" #features>
 	<div style="text-align: center;">
    <h1>Incrivelmente divertido!</h1>
    <hr style="width: 80px">
@@ -90,5 +101,5 @@
 </ul>
 
 <div>
-	<button mat-button id="fixedButton" (click)="scrollToElement('top')">Topo</button>
+	<button mat-button id="fixedButton" (click)="scrollTo(top)">Topo</button>
 </div>
