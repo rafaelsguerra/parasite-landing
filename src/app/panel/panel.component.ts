@@ -6,26 +6,26 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
-  listBreakpoint: number;
-  tileBreakpoint: number;
+  listBreakpoint: any;
+  tileBreakpoint: any;
+  panelHeightBreakpoint: any;
 
-  @Input() scrollElement: any; 
+  @Input() scrollElement: any;
 
   constructor() { }
 
   onResize(event) {
-    this.listBreakpoint = (window.innerWidth <= 1080) ? 1 : 4;
-    this.tileBreakpoint = (window.innerWidth <= 1080) ? 1 : 3;
+    this.listBreakpoint = (window.innerWidth <= 1024) ? 1 : 4;
+    this.tileBreakpoint = (window.innerWidth <= 1024) ? 1 : 3;
   }
 
   scrollToElement(id): void {
     const element = document.getElementById(id);
-    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
 
   ngOnInit() {
-  	this.listBreakpoint = (window.innerWidth <= 1080) ? 1 : 4;
-  	this.tileBreakpoint = (window.innerWidth <= 1080) ? 1 : 3;
+    this.listBreakpoint = (window.innerWidth <= 1024) ? 1 : 4;
+    this.tileBreakpoint = (window.innerWidth <= 1024) ? 1 : 3;
   }
- 
 }

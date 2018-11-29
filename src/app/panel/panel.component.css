@@ -37,7 +37,16 @@
 	right: 20px;
 }
 
-#phone{
+.phone{
 	width: auto;
 	max-height: 80%;
+}
+
+img {
+  -webkit-box-reflect: below 0
+  -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.9, transparent), to(white));
+}
+
+#top{
+  margin-top: 30px;
 }
